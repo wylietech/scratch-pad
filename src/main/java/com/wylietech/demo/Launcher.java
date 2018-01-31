@@ -1,6 +1,11 @@
 package com.wylietech.demo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Launcher {
+
+    private static Logger logger = LoggerFactory.getLogger(Launcher.class);
 
     /**
      * Entry point
@@ -8,6 +13,6 @@ public class Launcher {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        logger.info("Hello World");
     }
 }
