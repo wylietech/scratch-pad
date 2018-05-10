@@ -3,6 +3,8 @@ package com.wylietech.demo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static spark.Spark.*;
+
 public class Launcher {
 
     private static Logger logger = LoggerFactory.getLogger("LAUNCHER");
@@ -21,14 +23,12 @@ public class Launcher {
             System.out.flush();
         }));
 
-        LogTest.test();
-        logger.info("Waiting for shutdown");
+        get("/hello", (req, res) -> "Hello World");
 
-        try {
-            Thread.sleep(1000000000);
-        } catch (InterruptedException ex) {
+        get( "/goodbye", (r,q) -> {
+            return "fluff";
+        });
 
-        }
     }
 
 
