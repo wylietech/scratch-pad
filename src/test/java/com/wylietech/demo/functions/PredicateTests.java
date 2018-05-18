@@ -12,6 +12,8 @@ class PredicateTests {
 
   List<String> data = Arrays.asList("Rod", "Jane", "Freddy");
 
+  private Predicate<String> isEmpty = s -> s.isEmpty();
+
   /**
    * A predicate is a function that takes a single argument and returns true or false
    * @param arg
@@ -25,6 +27,9 @@ class PredicateTests {
   void canUsePredicateVariable() {
     Predicate<String> predicateVariable = s -> {
       return s.length() >= 5;
+
+
+
     };
 
     List<String> filteredData = data.stream().filter(predicateVariable).collect(Collectors.toList
